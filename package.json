@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require ts-node/register 'tests/**/*.test.ts'"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/chai": "5.2.2",
+    "@types/mocha": "10.0.10",
+    "chai": "4.5.0",
+    "mocha": "11.7.1",
+    "ts-node": "10.9.2",
     "typescript": "5.8.3"
   },
   "dependencies": {
