@@ -20,6 +20,7 @@
     "typescript": "5.8.3"
   },
   "dependencies": {
+    "@safe-global/safe-deployments": "1.37.36",
     "viem": "2.31.4"
   }
 }
