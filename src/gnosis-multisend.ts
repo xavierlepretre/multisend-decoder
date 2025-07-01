@@ -10,6 +10,7 @@ import {
     Hex,
     size,
     slice,
+    stringToHex,
     toFunctionSelector,
     trim,
 } from "viem"
@@ -141,6 +142,10 @@ const decodePackedFirstMultiSendTransaction = (
         value,
         data,
     }
-    const remaining = slice(remainingPackedTransactions, 85 + dataLength)
-    return { transaction, remaining }
+    if (85 + dataLength < size(remainingPackedTransactions)) {
+        const remaining = slice(remainingPackedTransactions, 85 + dataLength)
+        return { transaction, remaining }
+    } else {
+        return { transaction, remaining: stringToHex("") }
+    }
 }
